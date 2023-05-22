@@ -1,0 +1,26 @@
+# 19_7_1-2
+. Задание 19.3.3
+Попробуйте использовать бесплатный API для написания документов GET, POST, DELETE, PUT. Ваша задача — проверка всех запросов и напечатать при помощи команды команду распечатать ответы на исходящие документы.
+
+
+
+#  Сделать запрос GET к конечной точке /pet/findByStatus с параметром запроса status=available
+response = request.get('https://petstore.swagger.io/v2/pet/findByStatus', params={'status': 'доступно'})
+печать (ответ.json())
+
+
+#  Отправить POST-запрос к конечной точке /pet, чтобы добавить нового питомца
+new_pet = {'name': 'Fluffy', 'photoUrls': [], 'status': 'доступно'}
+ответ = запросы.пост('https://petstore.swagger.io/v2/pet', json=new_pet)
+печать (ответ.json())
+
+
+#  Сделать запрос PUT к конечной точке /pet для обновления существующего питомца
+updated_pet = {'id': 1, 'name': 'Fluffy', 'photoUrls': [], 'status': 'sold'}
+ответ = запросы.пут('https://petstore.swagger.io/v2/pet', json=updated_pet)
+печать (ответ.json())
+
+
+#  Отправить запрос DELETE на конечную точку /pet, чтобы удалить существующее домашнее животное
+ответ = запросы.удалить('https://petstore.swagger.io/v2/pet/1')
+печать (ответ.json())
